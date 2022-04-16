@@ -25,14 +25,18 @@ void AttendanceManagement::takeAttendance(Student* student, Course* course, std:
 
 void AttendanceManagement::showAttendance()
 {
-    string rawdata;
     ifstream file = rf::openFile("attendance.csv");
     rf::fileStatus(file, "Error, opening file(reading)");
     rf::fileContent(rf::is_empty(file), "Can't read file, file is empty!");
+    readLineByLine(file);
+    rf::closeFile(file);
+}
+void readLineByLine(std::ifstream& file)
+{
+    string rawdata;
     while(!file.eof())
     {
         getline(file, rawdata);
         std::cout << rawdata << std::endl;
     }
-    rf::closeFile(file);
 }

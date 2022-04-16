@@ -7,6 +7,8 @@
 #include "./Course.hpp"
 #include "./fileHandler.hpp"
 
+void readLineByLine(std::ifstream& file);
+
 class AttendanceManagement
 {
 private:
