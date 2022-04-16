@@ -26,6 +26,10 @@ namespace rf
 	{
 		return pFile.peek() == std::ifstream::traits_type::eof();
 	}
+    void fileContent(bool fileStatus, string error)
+	{
+		if (fileStatus) std::cerr << error << std::endl;    
+	}
 }
 //------------------------------------------------------------------
 namespace wf

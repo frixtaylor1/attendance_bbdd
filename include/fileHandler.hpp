@@ -11,6 +11,7 @@ namespace rf{
     ifstream openFile(string path);
     void closeFile(ifstream& file);
     bool is_empty(std::ifstream& pFile);
+    void fileContent(bool fileStatus, string error);
 };
 namespace wf{
     void fileStatus(ofstream& file, string error);
